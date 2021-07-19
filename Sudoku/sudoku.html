@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link
         href="https://fonts.googleapis.com/css2?family=Recursive&family=Red+Rose&family=Sriracha&family=Ubuntu&family=Poppins&family=Raleway&display=swap"
         rel="stylesheet">
@@ -13,24 +14,25 @@
 
 <body class="flex-row">
     <div class="topnav">
-        <a class = "active" href="\index.html">Back</a>
-        <a class = "about" href="https://en.wikipedia.org/wiki/Sudoku" target="_blank" >wiki</a>
-        <a class= "insta" href="https://www.instagram.com/unprofessionalcheff/" target="_blank">Instagram</a>
+        <a class="active" href="\index.html">Back</a>
+        <a class="about" href="https://en.wikipedia.org/wiki/Sudoku" target="_blank">wiki</a>
+        <a class="insta" href="https://www.instagram.com/unprofessionalcheff/" target="_blank">Instagram</a>
     </div>
     <div id="main__container">
         <div id="header__controls" class="flex-row">
-            <span id="header__menu"><img src="\Sudoku\3dots.png" id="dotMenuSpan" ></span>
+            <span id="header__menu"><img src="\Sudoku\3dots.png" id="dotMenuSpan"></span>
             <Span id="header__header">SUDOKU</Span>
-            <span id="header__submit"><span>Submit</span ></span>
+            <span id="header__submit"><span>Submit</span></span>
         </div>
         <div id="dotMenu">
-            <div id="back" class="flex-row" style="justify-content: space-evenly;"><img src="images/home.svg" alt="">Back</div>
+            <div id="back" class="flex-row" style="justify-content: space-evenly;"><img src="images/home.svg"
+                    alt="">Back</div>
             <div id="newGame">New Game</div>
             <div id="clear">Clear All</div>
             <div id="solver"> <span id="text"></span>
                 <div id="solverMenu">
                     <div id="solverStart">Start</div>
-                    <div id="solverWatch"> 
+                    <div id="solverWatch">
                         <input type="checkbox" id="solverWatchCbox" name="solverWatchCbox" value="watch" checked>
                         <label for="solverWatchCbox">Watch</label>
                     </div>
@@ -43,7 +45,7 @@
 
             </div>
         </div>
-        
+
         <!-- board -->
         <div id="board">
 
@@ -65,12 +67,12 @@
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path
                                 d="M832 1024v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm0-768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm896 768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90zm0-768v384q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-384q0-52 38-90t90-38h512q52 0 90 38t38 90z" />
-                            </svg></span>
+                        </svg></span>
                     <span data-size="9"><svg width="24" height="24" viewBox="0 0 1792 1792"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path
                                 d="M512 1248v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm-640-1024v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm-640-1024v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm640 512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68zm0-512v192q0 40-28 68t-68 28h-320q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h320q40 0 68 28t28 68z" />
-                            </svg></span>
+                        </svg></span>
                 </div>
             </div>
 
@@ -88,18 +90,17 @@
 
     <div class="footer">
         <p> Thank you visit our page again </p>
-        <p></p> 
+        <p></p>
 
-    <script src="global.js"></script>
-    <script src="combinations.js"></script>
-    <script src="validate.js"></script>
-    <script src="board.js"></script>
-    <script src="view.js"></script>
-    <script src="digger.js"></script>
-    <script src="userActions.js"></script>
-    <script src="solver.js"></script>
-    <script src="script.js"></script>
+        <script src="global.js"></script>
+        <script src="combinations.js"></script>
+        <script src="validate.js"></script>
+        <script src="board.js"></script>
+        <script src="view.js"></script>
+        <script src="digger.js"></script>
+        <script src="userActions.js"></script>
+        <script src="solver.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
-

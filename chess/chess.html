@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="\chess\chess.css" rel="stylesheet">
+    <title>Chess</title>
+
+    <div class="topnav">
+        <a class="active" href="\index.html">Back</a>
+        <a class="about" href="https://en.wikipedia.org/wiki/Chess" target="_blank">wiki</a>
+        <a class="insta" href="https://www.instagram.com/unprofessionalcheff/" target="_blank">Instagram</a>
+    </div>
+
+    <div id="start"></div>
+    <p id="interface">PLAY <br /> .Vs Computer
+        <input type="button" value="Start" class="but" onClick="run()" />
+    </p>
+    <div id="menu">
+        <ul>
+            <li style='list-style-image:url(images/1.png);' onclick='pieceChoice("p")'>Pawn</li>
+            <li style='list-style-image:url(images/2.png);' onclick='pieceChoice("n")'>Knight</li>
+            <li style='list-style-image:url(images/3.png);' onclick='pieceChoice("b")'>Bishop</li>
+            <li style='list-style-image:url(images/4.png);' onclick='pieceChoice("r")'>Rook</li>
+            <li style='list-style-image:url(images/5.png);' onclick='pieceChoice("q")'>Queen</li>
+            <li style='list-style-image:url(images/6.png);' onclick='pieceChoice("k")'>King</li>
+        </ul>
+    </div>
+    <script src="\chess\chess.js"></script>
+
+
+    <div class="footer">
+        <p> Thank you visit our page again </p>
+        <p></p>
+
+    </div>
+
+</html>
