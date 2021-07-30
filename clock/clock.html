@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: rgba(82, 73, 73, 0.164);
+        }
+       
+        #back a {
+            margin-left: 10px;
+            
+            background-color: rgba(14, 14, 71, 0.719);
+            text-decoration: none;
+            color: rgb(236, 226, 226);
+        }
+        h1 {
+            /* margin-left: 45%; */
+            text-align: center;
+            text-shadow: 2px 2px #e27474;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            background-image: url("/img/clock.jpg");
+            background-color: rgba(218, 195, 161, 0.774);
+            /* opacity: 0.9; */
+        }
+
+        .col-md-2 {
+            margin-top: 5%;
+            /* border: 1px solid red; */
+            display: block;
+            height: 2cm;
+            text-overflow: ellipsis;
+            text-align: center;
+            position: relative;
+            font-size: 50px;
+            padding: 2px;
+            text-shadow: 2px 2px #e0d9d9;
+        }
+
+        .btn {
+            margin-top: 3cm;
+            margin-right: 1cm;
+            /* width: fit-content; */
+        }
+
+        #Date {
+            color: rgb(207, 199, 198);
+            font-size: 30px;
+
+        }
+
+        .footer {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+            position: fixed;
+            bottom: 0;
+
+            left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back"><a href="/index.html">Back</a></div>
+    <h1>Timer</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 offset-md-5" id="Date"></div>
+            <p class="col-md-2 offset-md-3">Hour</p>
+            <p class="col-md-2">Minute</p>
+            <p class="col-md-2">Second</p>
+            <p class="col-md-3"></p>
+            <div class="col-md-2 col-sm-1 offset-md-3" id="hour">0 </div>
+            <div class="col-md-2 col-sm-1" id="minut"> 0</div>
+            <div class="col-md-2 col-sm-1" id="second"> 0 </div>
+
+            <div class="col-md-3"></div>
+
+            <button type="button" class="btn btn-success col-md-2 offset-md-4" id="start">Start</button>
+
+            <button type="button" class="btn btn-warning col-md-2" id="stop">Stop</button>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p> This is not a game , more coming </p>
+        <p></p>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        // ========================  daay 
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+        var newDate = new Date();
+        newDate.setDate(newDate.getDate());
+        $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+
+        //    ===========================
+        var interval = null;
+        var s = 0, m = 0, h = 0;
+        $("#start").click(function () {
+            // console.log("start");
+
+            s = 0, m = 0, h = 0;
+            $("#start").prop('disabled', true);
+            interval = setInterval(function () {
+                s = s + 1;
+                $("#second").html(s);
+                if (s == 59) {
+                    s = 0;
+                    m = m + 1;
+                    $("#minut").html(m);
+
+                    if (m == 59) {
+                        m = 0;
+                        h = h + 1;
+                        $("#hour").html(h);
+
+
+                    }
+
+
+
+                }
+            }, 1000);
+
+        })
+
+        $("#stop").click(function () {
+            $("#hour").html(0);
+            $("#minut").html(0);
+            $("#second").html(0);
+            clearInterval(interval);
+            interval = 0;
+            $("#start").prop('disabled', false);
+        })
+
+    });
+</script>
+
+</html>
